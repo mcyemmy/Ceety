@@ -1,12 +1,12 @@
-## Angular 4 project - Use ng-content and ng-packagr to package custom module libraries for external applications
+### Angular 4 project - Use ng-content and ng-packagr to package custom module libraries for external applications
 
 
-#Goal
+## Goal
 
 The goal for this project is to develop custom module libraries with app containers that other developers can leverage on for their project. Project content can easily be added to the template element of an imported module thereby eliminating the need for much code and promote UI consistency. The other interesting part is that we can export a packaged version of these  module library in such a way that lets anyone install it as a node mode either through npm or through a url reference to its .tgz file.
 
 
-#How-to
+## How-to
 
 - Creat the modules
 - Create export metadata in its own NgModule
