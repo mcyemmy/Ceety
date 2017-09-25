@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { ImageUriService } from './image-uri.service';
 export class MutualFundComponent {
-    constructor() {
+    /**
+     * @param {?} img
+     */
+    constructor(img) {
+        this.img = img;
         this.header = 'Mutual Funds';
         this.footer = 'Mutual fund package';
-        this.mutualImg = 'assets/images/mutual-fund-chart.jpg';
+        this.mutualImg = img.imageFile[0].dataUri;
     }
     /**
      * @return {?}
@@ -46,7 +51,9 @@ MutualFundComponent.decorators = [
 /**
  * @nocollapse
  */
-MutualFundComponent.ctorParameters = () => [];
+MutualFundComponent.ctorParameters = () => [
+    { type: ImageUriService, },
+];
 function MutualFundComponent_tsickle_Closure_declarations() {
     /** @type {?} */
     MutualFundComponent.decorators;
@@ -61,5 +68,7 @@ function MutualFundComponent_tsickle_Closure_declarations() {
     MutualFundComponent.prototype.footer;
     /** @type {?} */
     MutualFundComponent.prototype.mutualImg;
+    /** @type {?} */
+    MutualFundComponent.prototype.img;
 }
 //# sourceMappingURL=mutual-fund.component.js.map

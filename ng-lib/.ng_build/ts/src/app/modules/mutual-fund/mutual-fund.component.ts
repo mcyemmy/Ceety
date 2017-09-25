@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ImageUriService } from './image-uri.service';
+
 @Component({
   selector: 'app-mutual-fund',
   template: `
@@ -35,10 +37,10 @@ export class MutualFundComponent implements OnInit {
     footer: string;
     mutualImg: string;
 
-  constructor() {
+  constructor(private img: ImageUriService) {
     this.header = 'Mutual Funds';
     this.footer = 'Mutual fund package';
-    this.mutualImg = 'assets/images/mutual-fund-chart.jpg';
+    this.mutualImg = img.imageFile[0].dataUri;
   }
 
   ngOnInit() {

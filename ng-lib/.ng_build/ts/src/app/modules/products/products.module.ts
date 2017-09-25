@@ -7,10 +7,10 @@ import { ProductsComponent } from './products.component';
     CommonModule
   ],
   declarations: [
-      ProductsComponent
+    ProductsComponent
   ],
   exports: [
-      ProductsComponent
+    ProductsComponent
   ]
 })
 export class ProductsModule { }

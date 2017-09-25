@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MutualFundComponent } from './mutual-fund.component';
+import { ImageUriService } from './image-uri.service';
 export class MutualFundModule {
 }
 MutualFundModule.decorators = [
@@ -10,6 +11,9 @@ MutualFundModule.decorators = [
                 ],
                 declarations: [
                     MutualFundComponent
+                ],
+                providers: [
+                    ImageUriService
                 ],
                 exports: [
                     MutualFundComponent
