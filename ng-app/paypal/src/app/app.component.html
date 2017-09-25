@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row promos">
+       <h1>Paypal</h1>
+       <p>Demo of two Promo Modules imported from external libraries</p>
+        <div class="col-md-4">
+            <app-mutual-fund></app-mutual-fund>
+        </div>
+        <div class="col-md-4">
+            <app-products>
+                <p>
+                   {{ userName }} output some fetched data from httpRequest here. But also intercept the Http response to display a modal
+                </p>
+            </app-products>
+        </div>
+        <form #gitHubUser="ngForm" class="col-md-4">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" required minlength="5" [(ngModel)]="username" #username="ngModel">
+            <div [hidden]="username.valid || (username.invalid && (username.pristine || username.untouched))">
+               <p *ngIf="username.error.required">Value is required</p>
+               <p *ngIf="username.error.minlength">Minimum of 5 letters</p>
+             </div>
+          </div>
+          <div class="form-group" [ngClass]="{
+           'has-danger': username.invalid && (username.dirty || username.touched), 
+           'has-success': username.valid && (username.dirty || username.touched)}">
+            <label for="userType">User Type</label>
+            <input type="text" class="form-control" required [(ngModel)]="userType" #userType="ngModel">
+          </div>
+          <button (ngSubmit)="onFetchUser()">Fetch User</button>
+        </form>
+        <div class="col-md-8 center-block"> 
+            <pre>{{ gitHubUser.value | json }}</pre>
+            <p>{{ userName }}</p>
+        </div>
+    </div>
+</div>
